@@ -1,4 +1,4 @@
-const weatherAPIKey = "934dcb5bb54f0b52c1bdea83f8c58774";
+const weatherAPIKey = "";
 const weatherAPIURL = `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API key}`
 
 
@@ -209,7 +209,7 @@ function populateProduct(productList) {
 //Product Handler
 function productHandler() {
 
-      let freeProducts = productImage.filter(item => item.price <= 0 || !item.price);
+    let freeProducts = productImage.filter(item => item.price <= 0 || !item.price);
     let paidProducts = productImage.filter(item => item.price > 0);
 
     populateProduct(productImage);
@@ -251,7 +251,11 @@ navigator.geolocation.getCurrentPosition(position => {
 
     fetch("https://opentdb.com/api.php?amount=10&category=22&difficulty=medium")
     .then(response => response.json()) //Convert json into object
-    .then(data => console.log(data));
+    .then(data => {
+        const weatherCondition = "sunny";
+        const userLocation = "Stockholm";
+        let temperature = 20;
+        });
 })
 
 
